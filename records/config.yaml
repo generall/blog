@@ -1,0 +1,28 @@
+version: -1
+
+records:
+  - name: about
+    type: about
+    file: about.md
+  - name: Main
+    cathegory: main
+    type: main
+  - name: test record
+    file: test_record.md
+    cathegory: test_cat
+    tags:
+        - test
+        - info
+        - math
+  - name: test record 2
+  - name: Prediction power
+    time: 2014-11-01
+    cathegory: Machine Learning
+    file: prediction_power.md
+    img: https://boardgamegeek.com/camo/29aca422fcb5d61fca521f9c6c95c1a9ea427691/687474703a2f2f32352e6d656469612e74756d626c722e636f6d2f74756d626c725f6d356b71633675437a4f317279756f64366f315f313238302e6a7067
+    tags: 
+      - Machine Learning
+      - Probability
+      - Math
+
+

@@ -1,0 +1,50 @@
+<div class="toTop"></div>   
+<div class="catehory-gtaph js-popup">
+  <div class="close"></div>
+  <div></div>
+</div>
+<div class="wrapper">
+  <header class="js-header" id="header">
+    <a href="<%= @d3_cats %>" class="category fancybox fancybox.ajax"><%= t(:cats)  %></a>
+    <p class="logo">COMPREHENSION.ML</p>
+    <a class="tomain" href="about.html"><%= t(:about)  %></a>
+  </header>
+  <div class="page">
+    <div class="welcom">
+      <div class="h1"><%= t(:main_top) %></div>
+      <p class="welcom-text"><%= t :main_text %></p>
+    </div>
+    <div class="articles-prev">
+      <% @rec_per_col.each do |column| %>
+      <div class="vline">
+        <% column.each do |record| %>
+        <section class="ap-item">
+          <a href="/records/<%= record.url_name %>">
+            <div class="ap-img">
+              <img src="<%= record.img %>" alt="">
+            </div>
+            <div class="ap-text">
+              <p class="h2"><%= record.name %></p>
+              <p><%= record.snippet %></p>
+            </div>
+          </a>
+          <time class="date"> <%= Date.parse( record.time.to_s ) %></time>
+        </section>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <footer id="footer">
+    <section class="follow-me">
+          <a href="https://github.com/generall" class="g-hub" target="_blank"></a> 
+          <a href="https://twitter.com/vasnetsov93" class="twitter" target="_blank"></a>
+          <a href="https://ru.linkedin.com/in/андрей-васнецов-75268897" class="linkedin" target="_blank"></a> 
+    </section>
+    <section class="f-logo">
+      <img src="<%= asset_path('logo.png') %>" alt="">
+    </section>
+    <section class="copy"><a href="about.html">Андрей Васнецов</a> &copy; 2016</section>
+  </footer>
+</div> 
+

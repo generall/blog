@@ -1,0 +1,52 @@
+
+<div class="toTop"></div> 
+<div class="wrapper">
+  <header id="header" class="js-header">
+    <a href="/cat/<%= @record.cat.name.gsub(/\s/,"_") %>" class="category fancybox.ajax"><%= @record.cat.name %></a>
+    <p class="logo"><%= @record.name  %></p>
+    <a href="/" class="tomain"><%= t(:to_main)  %></a>
+  </header>
+  <div class="content">
+    <article class="post">
+      <%= raw @content %>
+    </article>
+    <div class="tags">
+      <% @record.tag.each do |tag| %>
+      <a class="tag btn-dark btn-border-o" href="/tag/<%= tag.name.gsub(/\s/,"_") %>"><%= tag.name %></a>
+      <% end %>
+    </div>
+    <div class="soc-btns">
+      <!-- vk -->
+      <div class="s-btn" id="vkshare">
+
+      </div>
+      <!-- twitter -->
+      <div class="s-btn" id="tweet">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="_trean_" data-hashtags="comprehension.ml">Tweet</a>
+      </div>
+    </div>
+    <div class="commentoza">
+      <div id="disqus_thread"></div>
+      <script>
+(function() {  // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = '//comprehensionml.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>	
+    </div>
+  </div>
+  <footer id="footer">
+    <section class="follow-me">
+      <a href="https://github.com/generall" class="g-hub" target="_blank"></a> 
+      <a href="https://twitter.com/vasnetsov93" class="twitter" target="_blank"></a>
+      <a href="https://ru.linkedin.com/in/андрей-васнецов-75268897" class="linkedin" target="_blank"></a> 
+    </section>
+    <section class="f-logo">
+      <img src="/assets/logo.png" alt="">
+    </section>
+    <section class="copy"><a href="about.html">Андрей Васнецов</a> &copy; 2016</section>
+  </footer> 
+</div>
