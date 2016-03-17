@@ -15,5 +15,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require fancybox
-//= require_tree .
+//= require_tree ./common
 

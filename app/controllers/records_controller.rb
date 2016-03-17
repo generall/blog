@@ -1,5 +1,10 @@
 class RecordsController < ApplicationController
 
+  def initialize()
+    super
+    @d3_cats = "/categories"
+  end
+
   def by_tag(tag)
     if tag.class == String
       tag = Tag.find_by(name: tag)
@@ -23,7 +28,7 @@ class RecordsController < ApplicationController
   def main( tag = nil, cat = nil, limit = 15, offset = 0 )
     @records = by_cat(cat.gsub('_',' ')) if cat
     @records = by_tag(tag.gsub('_',' ')) if tag
-    @records = Record.where(:rtype => ["default", nil]) if !@records
+    @records = Record.where(:rtype => ["default", "widget", nil]) if !@records
 
     @records = @records.limit(limit).offset(offset).to_a
     @columns = 3
@@ -34,7 +39,6 @@ class RecordsController < ApplicationController
   end
 
   def view
-    @d3_cats = "."
     begin
       record_name = params[:name] || ( throw "No record name" )
       @record = Record.find_by!( url_name: record_name )

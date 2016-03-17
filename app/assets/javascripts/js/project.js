@@ -86,7 +86,9 @@ $(function () {
     $(".toTop").click(function() {
       $("html, body").animate({"scrollTop": "0"}, "800");
     });
-    $(".fancybox").fancybox({type: 'ajax'});
+    $(".fancybox").fancybox({
+      type: 'ajax',
+    });
     hljs.initHighlighting.called = false;
     hljs.initHighlighting();
     var vk_share = $("#vkshare");

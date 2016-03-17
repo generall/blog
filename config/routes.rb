@@ -14,6 +14,12 @@ Rails.application.routes.draw do
 
   get 'about' => 'records#about'
 
+  get 'api/stats' => 'apis#stats'
+
+  get 'api/graph' => 'apis#graph'
+
+  get 'categories' => 'categories#index'
+
   mathjax 'mathjax'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

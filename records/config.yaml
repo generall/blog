@@ -7,14 +7,6 @@ records:
   - name: Main
     cathegory: main
     type: main
-  - name: test record
-    file: test_record.md
-    cathegory: test_cat
-    tags:
-        - test
-        - info
-        - math
-  - name: test record 2
   - name: Prediction power
     time: 2014-11-01
     cathegory: Machine Learning
@@ -24,5 +16,35 @@ records:
       - Machine Learning
       - Probability
       - Math
-
-
+  - name: Onus probandi
+    time: 2014-11-15
+    cathegory: Comprehension
+    img: /img/shked.jpg
+    file: onus_probandi.md
+    tags:
+      - Proof
+      - Skepticism
+      - Falsifiability
+  - name: Kolmogorov complexity
+    time: 2014-11-25
+    cathegory: Machine Learning
+    file: kolmogorov.md
+    tags:
+      - Machine Learning
+      - Probability
+      - Math
+  - name: lex parsimoniae 
+    time: 2014-12-12
+    cathegory: Comprehension
+    img: http://knife.kasumi.ru/upload/medialibrary/13b/britva1.jpg
+    file: okkama.md
+    tags:
+      - Math
+      - Probability
+      - Skepticism
+  - name: Heap paradox solvation
+    time: 2014-12-25
+    cathegory: Comprehension
+    file: heap_paradox.md
+    tags:
+      - Proof

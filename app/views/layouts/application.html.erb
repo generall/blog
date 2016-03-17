@@ -3,8 +3,10 @@
 <head>
   <title>Blog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', params[:controller], media: 'all', 'data-turbolinks-track' => true %>
   <script type="text/javascript" src="http://vk.com/js/api/share.js?90" charset="windows-1251"></script>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <!--%= javascript_include_tag 'application', 'data-turbolinks-track' => true %-->
+  <%= javascript_include_tag 'application', params[:controller], 'data-turbolinks-track' => true%>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag '/favicon.ico' %>
 </head>
