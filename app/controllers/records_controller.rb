@@ -54,7 +54,6 @@ class RecordsController < ApplicationController
         main
       when "widget"
       end
-      p type
     rescue ActiveRecord::RecordNotFound => e
       render_404
       false
