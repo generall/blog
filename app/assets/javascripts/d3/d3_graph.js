@@ -38,6 +38,23 @@ $(function () {
         .style("fill", function(d) { return color(d.group); })
         .call(force.drag);
 
+      var legend = svg.selectAll(".legend")
+        .data(graph.cats)
+        .enter().append("rect")
+        .attr("y", function(d){ return  d.num * 15 + 10 })
+        .attr("x", 10)
+        .attr("width", 10)
+        .attr("height", 10)
+        .attr("fill", function(d) { return color(d.id); })
+
+      var legend_text = svg.selectAll(".legendText")
+        .data(graph.cats)
+        .enter().append("text")
+        .attr("y", function(d){ return d.num * 15 + 20 })
+        .attr("x", 25)
+        .text(function(d){return d.name})
+        .attr("font-size", "12px");
+
       node.append("title")
         .text(function(d) { return d.name + " [" + d.cat + "]"; });
 

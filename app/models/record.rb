@@ -46,7 +46,7 @@ class Record < ActiveRecord::Base
           data = parse_file(dbrecord.file)
           dbrecord.snippet = data["snippet"] # first <p>
           dbrecord.caption = data["caption"] || record["name"] # first <h1>
-          dbrecord.img     = data["img"] || record["img"] || RANDOM_IMAGES.sample # first img src or random image
+          dbrecord.img     = record["img"] || data["img"] || RANDOM_IMAGES.sample # first img src or random image
         end
 
         tags = record["tags"] || []

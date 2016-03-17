@@ -41,7 +41,9 @@ class ApisController < ApplicationController
           value:  val
         } 
       end,
-      cats: Cat.all.map {|x| {name: x.name, id:x.id} }
+      cats: Cat.all
+            .select{|x| !["main","about","default"].include?(x.name)}
+            .map.with_index {|x, num| {num: num,   name: x.name, id:x.id} }
     }
       render json: @graph
   end
