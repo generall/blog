@@ -46,16 +46,16 @@
       text-decoration: none;
 
       color: darken($secondary, 20%);
+      &:visited,
+      &:active {
+        color: darken($secondary, 30%);
+      }
       &:hover {
         transition: opacity 1s ease-out 0s, visibility 1s ease-out 0s, transform .6s ease-out 0s, color .3s ease 0s;
         text-decoration: underline;
 
         color: $primary;
         /*color: darken($secondary, 30%);*/
-      }
-      &:visited,
-      &:active {
-        color: darken($secondary, 30%);
       }
     }
     pre {

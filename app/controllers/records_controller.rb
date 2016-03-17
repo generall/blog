@@ -72,4 +72,9 @@ class RecordsController < ApplicationController
     params[:name] = "about"
     view
   end
+
+  def reimport
+    Record.reimport
+    index
+  end
 end

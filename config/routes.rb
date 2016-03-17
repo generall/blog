@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   get 'categories' => 'categories#index'
 
+  get 'reimport' => 'records#reimport'
+
   mathjax 'mathjax'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
