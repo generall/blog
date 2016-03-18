@@ -18,3 +18,11 @@
   width: 420px;
   background-color: #FFF;
 }
+
+.node {
+  &:hover {
+    cursor: pointer;
+    stroke: #222;
+    stroke-width: 0.5px;
+  }
+}
