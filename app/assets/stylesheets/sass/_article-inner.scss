@@ -62,7 +62,7 @@
       code,
       .code {
         font-family: 'Anonymous Pro';
-        font-size: 95%;
+        /*font-size: 95%;*/
         line-height: 1.5;
 
         display: block;
@@ -74,7 +74,7 @@
         border-radius: 3px;
         background: lighten($secondary, 18%);
         & span {
-          font-size: 95%;
+          /*font-size: 95%;*/
           line-height: 1.5;
         }
       }
@@ -83,7 +83,7 @@
     .code {
     
         font-family: 'Anonymous Pro';
-        font-size: 95%;
+        /*font-size: 95%;*/
         background: lighten($secondary, 18%);
     }
   }
