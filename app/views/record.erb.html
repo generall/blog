@@ -2,7 +2,7 @@
 <div class="toTop"></div> 
 <div class="wrapper">
   <header id="header" class="js-header">
-    <a href="/cat/<%= @record.cat.name.gsub(/\s/,"_") %>" class="category fancybox.ajax"><%= @record.cat.name %></a>
+    <a href="/cat/<%= @record.cat.name.gsub(/\s/,"_") %>.html" class="category fancybox.ajax"><%= @record.cat.name %></a>
     <p class="logo"><%= @record.name  %></p>
     <a href="/" class="tomain"><%= t(:to_main)  %></a>
   </header>
@@ -12,7 +12,7 @@
     </article>
     <div class="tags">
       <% @record.tag.each do |tag| %>
-      <a class="tag btn-dark btn-border-o" href="/tag/<%= tag.name.gsub(/\s/,"_") %>"><%= tag.name %></a>
+      <a class="tag btn-dark btn-border-o" href="/tag/<%= tag.name.gsub(/\s/,"_") %>.html"><%= tag.name %></a>
       <% end %>
     </div>
     <div class="soc-btns">

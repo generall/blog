@@ -2,7 +2,7 @@
 <div class="toTop"></div> 
 <div class="wrapper">
   <header id="header" class="js-header">
-    <a href="<%= @d3_cats %>" class="category fancybox fancybox.ajax"><%= t(:cats)  %></a>
+    <a href="<%= @d3_cats %>.html" class="category fancybox fancybox.ajax"><%= t(:cats)  %></a>
     <p class="logo"><%= t(:about)  %></p>
     <a href="/" class="tomain"><%= t(:to_main)  %></a>
   </header>
@@ -22,4 +22,8 @@
     </section>
     <section class="copy"><a href="about.html">Андрей Васнецов</a> &copy; 2016</section>
   </footer> 
+</div>
+
+<div style="display: none;">
+  <a href="/api/graph.json">link to API to be downloaded by wget ;)</a>
 </div>

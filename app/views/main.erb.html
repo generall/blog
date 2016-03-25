@@ -5,9 +5,9 @@
 </div>
 <div class="wrapper">
   <header class="js-header" id="header">
-    <a href="<%= @d3_cats %>" class="category fancybox fancybox.ajax"><%= t(:cats)  %></a>
+    <a href="<%= @d3_cats %>.html" class="category fancybox fancybox.ajax"><%= t(:cats)  %></a>
     <p class="logo">COMPREHENSION.ML</p>
-    <a class="tomain" href="/about"><%= t(:about)  %></a>
+    <a class="tomain" href="/about.html"><%= t(:about)  %></a>
   </header>
   <div class="page">
     <div class="welcom">
@@ -19,7 +19,7 @@
       <div class="vline">
         <% column.each do |record| %>
         <section class="ap-item">
-          <a href="/records/<%= record.url_name %>">
+          <a href="/records/<%= record.url_name %>.html">
             <div class="ap-img">
               <img src="<%= record.img %>" alt="">
             </div>
