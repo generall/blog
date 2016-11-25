@@ -6,7 +6,7 @@
 
 github: [https://github.com/generall](https://github.com/generall)
 
-linkedin: [https://ru.linkedin.com/in/андрей-васнецов-75268897](https://ru.linkedin.com/in/андрей-васнецов-75268897)
+linkedin: [https://ru.linkedin.com/in/andrey-vasnetsov-75268897](https://ru.linkedin.com/in/andrey-vasnetsov-75268897)
 
 twitter: [https://twitter.com/vasnetsov93](https://twitter.com/vasnetsov93)
 

@@ -7,6 +7,15 @@ records:
   - name: Main
     cathegory: main
     type: main
+  - name: Structured kNN
+    time: 2016-11-25
+    cathegory: Machine Learning
+    file: sknn.md
+    img: /img/sknn.png
+    tags:
+      - Machine Learning
+      - Sequence classification
+      - NLP
   - name: Prediction power
     time: 2014-11-01
     cathegory: Machine Learning

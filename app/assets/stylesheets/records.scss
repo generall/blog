@@ -2,4 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.node {
+  stroke-width: 1px;
+  cursor: pointer;
+}
+.link {
+  stroke: #000;
+  stroke-opacity: 0.6;
+}
+.dist_link {
+  stroke: #000;
+  stroke-opacity: 0.6;
+}
+.chip {
+  fill: #fff;
+  stroke-width: 4px;
+  stroke: #ED029A;
+  animation: svg_pulse 3s ease;
+  animation-iteration-count: infinite;
+  pointer-events: none;
+}
 
+.post img {
+  margin: auto;
+  display: block;
+}
+
+.post ul ul li {
+  margin-left: 20px;
+}

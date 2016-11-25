@@ -5,12 +5,12 @@ $(function () {
     var width = 400,
     height = 400;
 
-    var color = d3.scale.category20();
+    var color = d3.scaleOrdinal(d3.schemeCategory20);
 
-    var force = d3.layout.force()
-      .charge(-120)
-      .linkDistance(45)
-      .size([width, height]);
+    var simulation = d3.forceSimulation()
+      .force("charge", d3.forceManyBody())
+      .force("link", d3.forceLink().id(function(d){ return d.id }))
+      .force("center", d3.forceCenter(width / 2, height / 2));
 
     var svg = d3.select(".graph").append("svg")
       .attr("width", width)
@@ -19,10 +19,8 @@ $(function () {
     d3.json("/api/graph.json", function(error, graph) {
       if (error) throw error;
 
-      force
-        .nodes(graph.nodes)
-        .links(graph.links)
-        .start();
+      $.each(graph.nodes, function(idx, node){node.id = idx});
+      
 
       var link = svg.selectAll(".link")
         .data(graph.links)
@@ -36,7 +34,10 @@ $(function () {
         .attr("class", "node")
         .attr("r", 9)
         .style("fill", function(d) { return color(d.group); })
-        .call(force.drag);
+        .call(d3.drag()
+          .on("start", dragstarted)
+          .on("drag", dragged)
+          .on("end", dragended));
 
       var legend = svg.selectAll(".legend")
         .data(graph.cats)
@@ -60,15 +61,43 @@ $(function () {
 
       node.on("dblclick", function(d) { document.location = d.cat_link });
 
-      force.on("tick", function() {
-        link.attr("x1", function(d) { return d.source.x; })
+      simulation
+        .nodes(graph.nodes)
+        .on("tick", ticked);
+
+      simulation.force("link")
+        .links(graph.links);
+
+
+      function dragstarted(d) {
+        if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+      }
+
+      function dragged(d) {
+        d.fx = d3.event.x;
+        d.fy = d3.event.y;
+      }
+
+      function dragended(d) {
+        if (!d3.event.active) simulation.alphaTarget(0);
+        d.fx = null;
+        d.fy = null;
+      }
+
+      function ticked() {
+        link
+          .attr("x1", function(d) { return d.source.x; })
           .attr("y1", function(d) { return d.source.y; })
           .attr("x2", function(d) { return d.target.x; })
           .attr("y2", function(d) { return d.target.y; });
 
-        node.attr("cx", function(d) { return d.x; })
+        node
+          .attr("cx", function(d) { return d.x; })
           .attr("cy", function(d) { return d.y; });
-      });
+      }
+
     });
   }
 
